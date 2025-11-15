@@ -32,11 +32,11 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -50.0
-offset_right = 200.0
-offset_bottom = 50.0
-theme_override_font_sizes/font_size = 48
+offset_left = -300.0
+offset_top = -75.0
+offset_right = 300.0
+offset_bottom = 75.0
+theme_override_font_sizes/font_size = 72
 text = "Start Game"
 
 [node name="ScoreLabel" type="Label" parent="UI"]
@@ -46,12 +46,12 @@ anchor_left = 0.5
 anchor_top = 0.1
 anchor_right = 0.5
 anchor_bottom = 0.1
-offset_left = -532.0
-offset_top = -100.0
-offset_right = -474.0
-offset_bottom = -77.0
+offset_left = -300.0
+offset_top = -150.0
+offset_right = -100.0
+offset_bottom = -50.0
 theme_override_colors/font_color = Color(0.32587188, 0.5671996, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Score: 0"
 
 [node name="TimeLabel" type="Label" parent="UI"]
@@ -61,12 +61,12 @@ anchor_left = 0.5
 anchor_top = 0.1
 anchor_right = 0.5
 anchor_bottom = 0.1
-offset_left = 344.0
-offset_top = -96.0
-offset_right = 531.0
-offset_bottom = -41.0
+offset_left = 100.0
+offset_top = -150.0
+offset_right = 300.0
+offset_bottom = -50.0
 theme_override_colors/font_color = Color(0.32587188, 0.5671996, 1, 1)
-theme_override_font_sizes/font_size = 40
+theme_override_font_sizes/font_size = 60
 text = "Time: 60s"
 
 [node name="GameOverLabel" type="Label" parent="UI"]
@@ -77,7 +77,7 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 theme_override_colors/font_color = Color(1, 0, 0, 1)
-theme_override_font_sizes/font_size = 48
+theme_override_font_sizes/font_size = 72
 text = "Game Over!
 Tap to Restart"
 
@@ -88,10 +88,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -200.0
-offset_top = -150.0
-offset_right = 200.0
-offset_bottom = 150.0
+offset_left = -400.0
+offset_top = -300.0
+offset_right = 400.0
+offset_bottom = 300.0
 
 [node name="ResultScore" type="Label" parent="UI/ResultPanel"]
 layout_mode = 0
@@ -99,12 +99,12 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -150.0
-offset_top = -50.0
-offset_right = 150.0
-offset_bottom = 50.0
+offset_left = -300.0
+offset_top = -100.0
+offset_right = 300.0
+offset_bottom = 100.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 60
 text = "Final Score: 0"
 
 [node name="RestartButton" type="Button" parent="UI/ResultPanel"]

@@ -22,11 +22,10 @@ buses/default_bus_layout=""
 [display]
 
 window/size/viewport_width=1080
-window/size/viewport_height=1080
+window/size/viewport_height=1920
 window/size/resizable=false
 window/stretch/mode="viewport"
-window/stretch/aspect="keep"
-gui/theme/default_font_size=24
+gui/theme/default_font_size=48
 
 [rendering]
 
