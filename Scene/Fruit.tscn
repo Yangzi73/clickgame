@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dnl68qfcqsk7a" path="res://Pic/czn.png" id="2_xnscu"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_1"]
-radius = 80.0
+radius = 160.0
 
 [node name="Fruit" type="RigidBody2D"]
 contact_monitor = true
@@ -13,6 +13,7 @@ script = ExtResource("1_lcbm1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_xnscu")
+scale = Vector2(2, 2)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_1")
