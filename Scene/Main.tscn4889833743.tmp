@@ -1,0 +1,124 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk51rg1q6tiom"]
+
+[ext_resource type="Script" uid="uid://cmmr2jubmytfj" path="res://Script/Main.gd" id="1_8d5b1"]
+[ext_resource type="PackedScene" uid="uid://wlrwipyemi64" path="res://Scene/Ground.tscn" id="3_8d5b3"]
+[ext_resource type="Script" uid="uid://2oupnv25wg0u" path="res://Script/TouchInput.gd" id="4_8d5b4"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_8d5b1")
+
+[node name="SpawnTimer" type="Timer" parent="."]
+wait_time = 0.3
+
+[node name="FruitContainer" type="Node2D" parent="."]
+
+[node name="Ground" parent="." instance=ExtResource("3_8d5b3")]
+script = null
+
+[node name="TouchInput" type="Node2D" parent="."]
+script = ExtResource("4_8d5b4")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="GoodSoundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="BadSoundPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="StartButton" type="Button" parent="UI"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -214.0
+offset_top = -72.0
+offset_right = 12.0
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(2, 2)
+theme_override_font_sizes/font_size = 40
+text = "Start Game"
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = -532.0
+offset_top = -100.0
+offset_right = -474.0
+offset_bottom = -77.0
+theme_override_colors/font_color = Color(0.32587188, 0.5671996, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Score: 0"
+
+[node name="TimeLabel" type="Label" parent="UI"]
+visible = false
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.1
+anchor_right = 0.5
+anchor_bottom = 0.1
+offset_left = 344.0
+offset_top = -96.0
+offset_right = 531.0
+offset_bottom = -41.0
+theme_override_colors/font_color = Color(0.32587188, 0.5671996, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Time: 60s"
+
+[node name="GameOverLabel" type="Label" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 48
+text = "Game Over!
+Tap to Restart"
+
+[node name="ResultPanel" type="Panel" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+offset_bottom = 150.0
+
+[node name="ResultScore" type="Label" parent="UI/ResultPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -50.0
+offset_right = 150.0
+offset_bottom = 50.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+text = "Final Score: 0"
+
+[node name="RestartButton" type="Button" parent="UI/ResultPanel"]
+layout_mode = 0
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -80.0
+offset_top = 50.0
+offset_right = 80.0
+offset_bottom = 100.0
+theme_override_font_sizes/font_size = 20
+text = "Restart"
