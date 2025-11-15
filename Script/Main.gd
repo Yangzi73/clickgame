@@ -6,6 +6,7 @@ var game_started = false
 var round_time = 30.0  # 每回合60秒
 var current_time = 0.0
 var fruit_scene = preload("res://Scene/Fruit.tscn")
+var fruit_scale_factor = 1.0  # 水果对象缩放比例
 
 # 音频资源
 var bgm_audio = preload("res://Sound/my-8-bit-hero-301280.mp3")
@@ -23,6 +24,9 @@ var fruit_textures = {
 }
 
 func _ready():
+	# 根据屏幕大小调整水果对象比例
+	adjust_fruit_scale_for_screen()
+	
 	# 显示开始界面
 	show_start_screen()
 	
@@ -138,10 +142,13 @@ func spawn_fruit():
 	fruit.linear_velocity = velocity
 	fruit.angular_velocity = randf_range(-5, 5)
 	
+	# 应用屏幕适配缩放比例
+	fruit.scale = Vector2(fruit_scale_factor, fruit_scale_factor)
+	
 	# 调试信息
 	var object_type = "坏对象" if is_bad else "好对象"
 	var image_names = ["LHC", "LNX", "CZN"]
-	print("生成对象类型: ", object_type, " 图片: ", image_names[image_type])
+	print("生成对象类型: ", object_type, " 图片: ", image_names[image_type], " 缩放比例: ", fruit_scale_factor)
 
 func add_score(points):
 	score += points
@@ -169,3 +176,20 @@ func _input(event):
 	if game_over and event is InputEventScreenTouch and event.pressed:
 		# 重新开始游戏
 		get_tree().reload_current_scene()
+
+func adjust_fruit_scale_for_screen():
+	# 获取屏幕大小
+	var screen_size = get_viewport().get_visible_rect().size
+	var base_resolution = Vector2(1080, 1920)
+	
+	# 计算缩放比例（基于屏幕高度）
+	var scale_factor = screen_size.y / base_resolution.y
+	
+	# 限制最小和最大缩放比例
+	scale_factor = clamp(scale_factor, 0.8, 2.0)
+	
+	# 设置水果对象的全局缩放比例
+	# 这个比例会在生成水果时使用
+	fruit_scale_factor = scale_factor
+	
+	print("屏幕大小: ", screen_size, " 缩放比例: ", scale_factor)
